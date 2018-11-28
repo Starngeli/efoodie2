@@ -44,62 +44,10 @@
      
 	</div>
 
-          <script>
-              var comment = 'wake up';
-              var usersT = $.ajax({
-                  type: "post",
-                  method: "POST",
-                  data: {comment:comment},
-                  url: "phpscripts/countUsers.php",
-                  dataType: 'json',
-                  statusCode: {
-                      500: function () {
-                          console.log('err');
-                      }
-                  }
-              });
-              usersT.done(function(response22){
-                  console.log('oooooooooooo',response22);
-                  document.getElementById('custT').innerHTML = response22;
-              });
 
-
-              var chefT = $.ajax({
-                  type: "post",
-                  method: "POST",
-                  data: {comment:comment},
-                  url: "phpscripts/recipeTotal.php",
-                  dataType: 'json',
-                  statusCode: {
-                      500: function () {
-                          console.log('err');
-                      }
-                  }
-              });
-              chefT.done(function(response23){
-                  console.log('oooooooooooo',response23);
-                  document.getElementById('chefT').innerHTML = response23;
-              });
-
-
-              var beefT = $.ajax({
-                  type: "post",
-                  method: "POST",
-                  data: {comment:comment},
-                  url: "phpscripts/countRole.php",
-                  dataType: 'json',
-                  statusCode: {
-                      500: function () {
-                          console.log('err');
-                      }
-                  }
-              });
-              beefT.done(function(response3){
-                  console.log('oooooooooooo',response3);
-                  document.getElementById('adminT').innerHTML = response3;
-              });
-          </script>
       </div> <!-- /container -->
 <?php
 	include "templates/footer.php";
 ?>
+
+
