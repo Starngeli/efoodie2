@@ -3,7 +3,7 @@ session_start();
 require_once 'phpscripts/connection.php';
 	
 	include "templates/header.php";
-	include "templates/nav.php";
+	include "templates/testnav.php";
 ?>
 
     <main role="main">
@@ -40,7 +40,7 @@ require_once 'phpscripts/connection.php';
 	
 	<div class="form-group">
 		<label for="days_available">Days Available</label>
-		<textarea placeholder="Enter the Days Available" class="form-control form-control-md" name="days_available" id="days_available" required style="height:170px" ></textarea>
+		<input placeholder="Enter the Days Available" class="form-control form-control-md" name="days_available" type="date" id="days_available" />
 	</div>
 	
     <div class="form-group">

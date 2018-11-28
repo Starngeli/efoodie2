@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2018 at 01:14 AM
+-- Generation Time: Nov 27, 2018 at 06:39 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -56,10 +56,10 @@ CREATE TABLE `recipes` (
   `recipe_chefid` int(12) NOT NULL,
   `recipe_title` text NOT NULL,
   `recipe_full_text` text NOT NULL,
-  `recipe_photo` varchar(200) DEFAULT NULL,
+  `recipe_photo` varchar(200) NOT NULL,
   `recipe_publication_date` date NOT NULL,
   `recipe_created_date` date NOT NULL,
-  `recipe_last_update` bigint(10) NOT NULL,
+  `recipe_last_update` date NOT NULL,
   `recipe_display` tinyint(1) NOT NULL,
   `recipe_order` bigint(12) NOT NULL,
   `ingredients` text NOT NULL,
@@ -73,7 +73,8 @@ CREATE TABLE `recipes` (
 --
 
 INSERT INTO `recipes` (`recipeid`, `recipe_chefid`, `recipe_title`, `recipe_full_text`, `recipe_photo`, `recipe_publication_date`, `recipe_created_date`, `recipe_last_update`, `recipe_display`, `recipe_order`, `ingredients`, `recipe_procedure`, `ingredientsvalue`, `Chef_Name`) VALUES
-(1, 0, 'Pork Chops', 'Pork chops is a ethiopian inspired email', NULL, '2018-11-24', '2018-11-24', 1541745014, 0, 0, 'pork', 'boil the pork\r\nroast it', 'pork is quite essential since it provides proteins to the body', 'John');
+(1, 0, 'Pork Chops', 'Pork chops is a ethiopian inspired email', 'images/image11.jpg', '2018-11-24', '2018-11-24', '2018-11-24', 0, 0, 'pork', 'boil the pork\r\nroast it', 'pork is quite essential since it provides proteins to the body', 'John'),
+(2, 0, 'Creamy kale & chicken traybake', 'A one-pan supper with bacon-wrapped, succulent chicken breasts and a garlicky, mascarpone stuffing. This everyday recipe is 3 of your 5-a-day.\r\n\r\n', 'images/image12.jpg', '2018-11-26', '2018-11-26', '2018-11-26', 0, 0, '100g curly kale, finely chopped\r\n1 lemon\r\n\r\n, Â½ zested, Â½ cut into wedges\r\n4 tbsp mascarpone\r\n2 garlic cloves, crushed\r\n4 skinless chicken breasts\r\n12 rashers smoked, streaky bacon\r\n\r\n500g parsnips\r\n\r\n, peeled and cut into batons\r\n2 red onions, halved and cut into wedges, roots left intact\r\n500g sweet potatoes\r\n\r\n, peeled and cut into thin discs\r\n2 tbsp olive oil', '1.Heat oven to 220C/200C fan/gas 7. Bring a pan of water to the boil and cook the kale for 4 mins until tender. Rinse under cold water, squeeze dry with your hands, then whizz in a food processor with the lemon zest, mascarpone, garlic and seasoning.\r\n', 'rich in fibre, folate and vitamin C', '');
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,7 @@ CREATE TABLE `schedule` (
   `chef_rates` text NOT NULL,
   `days_available` date NOT NULL,
   `chef_photo` varchar(200) NOT NULL,
-  `status` varchar(200) NOT NULL
+  `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -96,7 +97,7 @@ CREATE TABLE `schedule` (
 --
 
 INSERT INTO `schedule` (`schedule_id`, `chef_name`, `chef_specialization`, `chef_rates`, `days_available`, `chef_photo`, `status`) VALUES
-(1, 'Stan', 'Beef', 'Kshs 1000 per hour', '2018-11-25', '', 'Free');
+(1, 'Stan', 'Beef', 'Kshs 1000 per hour', '2018-11-25', '', 0);
 
 -- --------------------------------------------------------
 
@@ -123,7 +124,6 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`, `role`
 (1, 'demo', 'demo@email.me', '827ccb0eea8a706c4c34a16891f84e7b', '2018-10-29 11:07:55', NULL, NULL, NULL),
 (5, 'stanlee', 'starboi@gmail.com', '0b3f45b266a97d7029dde7c2ba372093', '2018-10-30 17:36:38', NULL, NULL, NULL),
 (27, 'Vanessa ', 'mdee@gmail.com', '414c8353aee97c0cf173ca489673be1d', '2018-11-09 07:14:14', 'Customer', '12345', 'Female'),
-(31, 'Ngeli', 'n@gmail.com', '8e4de25f51e4c4df0b15c8d9e2041725', '2018-11-21 15:08:44', 'Customer', '123', 'Male'),
 (32, 'Stanleyy', 'stanley@gmail.com', 'f52412c4ff1dacd2111f4951f3db1260', '2018-11-22 11:19:43', 'Admin', '123', 'Male'),
 (36, 'Fridah', 'fridah@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', '2018-11-25 17:54:53', 'Chef', '12345', 'Female'),
 (37, 'Sombstar', 'sombstar@gmail.com', '020e596c4be3010c24a0975f7d4270c2', '2018-11-25 20:50:52', 'Customer', '0719121852', 'Male');
@@ -189,7 +189,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `recipeid` bigint(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `recipeid` bigint(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `schedule`

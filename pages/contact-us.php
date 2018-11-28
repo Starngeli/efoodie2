@@ -1,7 +1,7 @@
 <?php
 	include_once '../phpscripts/connection.php';//The statement below establishes the database connection by importing the code written in db_connect.php located in  includes.
 	
-	include "../templates/nav.php";
+	include "../templates/testnav.php";
 
 	if (isset($_POST["send_message"])){
 		//In the line above, $_POST["send_message"] is set (isset) to trigger process that will take place with in the curly bracket. That is if $_POST["send_message"] is missing, no process will table place.

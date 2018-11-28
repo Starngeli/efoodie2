@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once '../phpscripts/connection.php';
-
+include "../templates/testnav.php";
 if(!isset($_SESSION['username'])) {
 	header("Location: ../index.php");
 } else {
@@ -57,7 +57,7 @@ if(!isset($_SESSION['username'])) {
                 </div>
             </div>
         </div>
-        <div class="delicious-main-menu">
+     <!--   <div class="delicious-main-menu">
             <div class="classy-nav-container breakpoint-off">
                 <div class="container">
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
@@ -77,7 +77,6 @@ if(!isset($_SESSION['username'])) {
 									<li><a href="team.php">Team</a></li>			
 									<li><a href="">Services</a>
 									<ul class="dropdown">
-                                    <li><a href="../hirechef.php">Hire Chef</a></li>
                                     <li><a href="">My account-<?php echo $_SESSION['username']; ?></a></li>
 									</ul></li>
 				
@@ -88,7 +87,7 @@ if(!isset($_SESSION['username'])) {
                     </nav>
                 </div>
             </div>
-        </div>
+        </div> -->
     </header>
     <section class="hero-area">
         <div class="hero-slides owl-carousel">

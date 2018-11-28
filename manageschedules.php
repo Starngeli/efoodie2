@@ -11,7 +11,7 @@ include "templates/testnav.php";
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Recipe List:</h1>
+          <h1 class="display-3">Schedules List:</h1>
         </div>
       </div>
       <div class="container">
@@ -21,18 +21,16 @@ include "templates/testnav.php";
 		  <thead>
 				<tr>
 				  <th scope="col">#</th>
-				  <th scope="col">Recipe Title</th>
-				  <th scope="col">Recipe Full Text</th>
-				  <th scope="col">Recipe Publication Date</th>
-				  <th scope="col">Ingredients</th>
-				  <th scope="col">Recipe Procedure</th>
-				  <th scope="col">Ingredients Value</th>
 				  <th scope="col">Chef Name</th>
+				  <th scope="col">Chef Specialization</th>
+				  <th scope="col">Chef Rates</th>
+				  <th scope="col">Days Available</th>
+				  <th scope="col">Status</th>
 				  <th scope="col">Actions</th>
 				</tr>
 		  </thead>
 		  <?php
-$spot_users = "SELECT * FROM recipes";
+$spot_users = "SELECT * FROM schedule";
 $user_res = $db->query($spot_users);
 if($user_res->num_rows > 0){
 		?>  
@@ -42,14 +40,12 @@ if($user_res->num_rows > 0){
 ?>
 						<tr>
 							<th scope="row">1</th>
-							<td><?php print $users_row["recipe_title"]; ?></td>
-							<td><?php print $users_row["recipe_full_text"]; ?></td>
-							<td><?php print $users_row["recipe_publication_date"]; ?></td>
-							<td><?php print $users_row["ingredients"]; ?></td>
-							<td><?php print $users_row["recipe_procedure"]; ?></td>
-							<td><?php print $users_row["ingredientsvalue"]; ?></td>
-							<td><?php print $users_row["Chef_Name"]; ?></td>
-							<td>[Edit][ <a href = "delete.php?id=<?php print $users_row["id"]; ?>" >Delete</a> ]</td>
+							<td><?php print $users_row["chef_name"]; ?></td>
+							<td><?php print $users_row["chef_specialization"]; ?></td>
+							<td><?php print $users_row["chef_rates"]; ?></td>
+							<td><?php print $users_row["days_available"]; ?></td>
+							<td><?php print $users_row["status"]; ?></td>
+							<td>[ <a href = "hire.php" >Hire</a> ]</td>
 						</tr>
 <?php
 }

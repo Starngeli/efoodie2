@@ -1,5 +1,5 @@
 <?php
-include "../templates/nav.php";
+include "../templates/testnav.php";
 ?>
 
 <!DOCTYPE html>

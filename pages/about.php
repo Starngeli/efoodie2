@@ -1,3 +1,6 @@
+<?php
+include "../templates/testnav.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="delicious-main-menu">
+      <!--  <div class="delicious-main-menu">
             <div class="classy-nav-container breakpoint-off">
                 <div class="container">
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
@@ -85,7 +88,7 @@
                     </nav>
                 </div>
             </div>
-        </div>
+        </div>  -->
     </header>
     <div class="breadcumb-area bg-img bg-overlay" style="background-image: url('../assets/home-about-page/img/bg-img/breadcumb1.jpg');">
         <div class="container h-100">

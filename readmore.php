@@ -2,7 +2,7 @@
     require_once "phpscripts/connection.php";
 
 include "templates/header.php";
-include "templates/nav.php";
+include "templates/testnav.php";
 
 ?>
 
@@ -11,7 +11,7 @@ include "templates/nav.php";
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">View Messages</h1>
+          <h1 class="display-3">More about recipe</h1>
         </div>
       </div>
       <div class="container">
@@ -33,6 +33,7 @@ $select_mgs = "SELECT * FROM recipes WHERE  recipeid= '$messageId' LIMIT 1";
             <p><?php print $msg_row["ingredients"]; ?></p>
             <p><?php print $msg_row["recipe_procedure"]; ?></p>
             <p><?php print $msg_row["ingredientsvalue"]; ?></p>
+            <p><?php print $msg_row["recipe_photo"]; ?></p>
             
         <?php
                 
@@ -40,7 +41,18 @@ $select_mgs = "SELECT * FROM recipes WHERE  recipeid= '$messageId' LIMIT 1";
         echo 'No data';
     }         
 ?>
-          </div>
+			<div class="form-group">
+		<label for="comment">Comment</label>
+		<textarea placeholder="Enter your comment" class="form-control form-control-md" name="comment" id="comment" required style="height:150px"></textarea>
+	</div>
+		
+			<form method="POST" action="commentsprocess.php">
+			 <input class="btn btn-secondary" type="post_comment" name="post_comment" value="Post comment" >
+			</form>
+			<form>
+			  <li><a class="btn btn-secondary" href="schedule.php">View Chef's Schedule</a></li>             
+			</form>
+			</div>
         </div>
 
       </div> <!-- /container -->

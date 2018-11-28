@@ -1,8 +1,8 @@
 <?php
-    include_once 'phpscripts/connection.php';
+    require_once "phpscripts/connection.php";
 
 include "templates/header.php";
-include "templates/nav.php";
+include "templates/testnav.php";
 
 ?>
 
@@ -11,7 +11,7 @@ include "templates/nav.php";
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Hire Chef</h1>
+          <h1 class="display-3">More about hire</h1>
         </div>
       </div>
       <div class="container">
@@ -19,19 +19,17 @@ include "templates/nav.php";
         <div class="row">
           <div class="col-md-12">
 <?php
-
 $messageId = $_GET["schedule_id"];
-$select_mgs = "SELECT * FROM schedule WHERE schedule_id = '$messageId' LIMIT 1";
+$select_mgs = "SELECT * FROM schedule WHERE  schedule_id= '$messageId' LIMIT 1";
     $msg_res = $db->query($select_mgs);
     if ($msg_res->num_rows > 0){
         $msg_row = $msg_res->fetch_assoc();
         ?>
             <h2><?php print $msg_row["chef_name"]; ?></h2>
            
-           <h6>Available on: <?php print date( $msg_row["days_available"]); ?> by Chef<?php print $msg_row["chef_name"]; ?></h6>
+           <h6>Available on: <?php print date( $msg_row["days_available"]); ?> by Chef <?php print $msg_row["chef_name"]; ?></h6>
             
-            <p><?php print $msg_row["chef_name"]; ?></p>
-            <p><?php print $msg_row["chef_specialization"]; ?></p>
+            <p> Best at cooking:<?php print $msg_row["chef_specialization"]; ?></p>
             <p><?php print $msg_row["chef_rates"]; ?></p>
             <p><?php print $msg_row["chef_photo"]; ?></p>
             
@@ -41,7 +39,10 @@ $select_mgs = "SELECT * FROM schedule WHERE schedule_id = '$messageId' LIMIT 1";
         echo 'No data';
     }         
 ?>
-          </div>
+<form>
+			  <li><a class="btn btn-secondary" href="">Hire Chef</a></li>             
+			</form>
+			</div>
         </div>
 
       </div> <!-- /container -->
@@ -49,7 +50,7 @@ $select_mgs = "SELECT * FROM schedule WHERE schedule_id = '$messageId' LIMIT 1";
     </main>
 
     <footer class="container">
-      <p>Copyright &copy; eFoodie</p>
+      <p>Copyright &copy; efoodie</p>
     </footer>
 
     <!-- Bootstrap core JavaScript

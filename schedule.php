@@ -35,19 +35,17 @@ if (isset($_GET["schedule_id"])){
           <div class="col-md-8">
             <h2><?php print $art_row["chef_specialization"]; ?></h2>
            
-           <h6>Published on: <?php print date( $art_row["recipe_publication_date"]); ?> by <?php print $art_row["Chef_Name"]; ?></h6>
+           <h6>Published on: <?php print date( $art_row["days_available"]); ?> by <?php print $art_row["chef_name"]; ?></h6>
 
-		     <p><?php print $art_row["chef_rates"]; ?></p>
-			 <p><?php print $art_row["days_available"];?></p>
-			 <p><?php print $art_row["chef_photo"];?></p>
-			
+            <p><?php print $msg_row["chef_specialization"]; ?></p>
+            <p><?php print $msg_row["chef_rates"]; ?></p>
+            <p><?php print $msg_row["chef_photo"]; ?></p>
 			
 		   
           </div>
           <div class="col-md-4">
-            <h2>Hire Chef</h2>
-            <p>Explore the different chefs available.</p>
-            
+            <h2>Chef Schedules.</h2>
+            <p>These are the schedules</p>
           </div>
         </div>
 <?php
@@ -83,7 +81,7 @@ if (isset($_GET["schedule_id"])){
                   <div class="col-md-4">
             <h2><?php print $art_row["chef_specialization"]; ?></h2>
            
-           <h6>Available On: <?php print date( $art_row["days_available"]); ?> by Chef <?php print $art_row["chef_name"]; ?></h6>
+           <h6>Available on: <?php print date( $art_row["days_available"]); ?> by <?php print $art_row["chef_name"]; ?></h6>
             
    <?php 
 			$max_words = 20; //initializing the number of words (20) to be printed as a brief story before the viewer reads more
@@ -94,7 +92,7 @@ if (isset($_GET["schedule_id"])){
             
 			<p><?php print $shown_string; //Print the sliced array ?></p>
 		
-            <p><a class="btn btn-secondary" href="hirechef.php?schedule_id=<?php print $art_row["schedule_id"]; ?>" role="button">Click here for more information</a></p>
+            <p><a class="btn btn-secondary" href="readschedule.php?schedule_id=<?php print $art_row["schedule_id"]; ?>" role="button">View More</a></p>
         </div>
         <?php
         }         

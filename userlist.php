@@ -2,7 +2,7 @@
     require_once "phpscripts/connection.php";
 
 include "templates/header.php";
-include "templates/nav.php";
+include "templates/testnav.php";
 
 ?>
 

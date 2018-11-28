@@ -4,7 +4,7 @@
 	require_once 'phpscripts/connection.php';
 
 	include "templates/header.php";
-	include "templates/nav.php";
+	include "templates/testnav.php";
 ?>
 
     <main role="main">
@@ -22,7 +22,7 @@
        
           
             <div class="col-md-3">
-                <a href="#" class="btn btn-sq-lg btn-warning">
+                <a href="managerecipes.php" class="btn btn-sq-lg btn-warning">
                   <i class="fa fa-user fa-5x"></i><br/>
                   Manage All Recipes
                 </a>
@@ -38,6 +38,13 @@
                 <a href="view_message.php" class="btn btn-sq-lg btn-primary">
                     <i class="fa fa-user fa-5x"></i><br/>
                     View Users Messages
+                </a>
+            </div>
+			
+			<div class="col-md-3">
+                <a href="manageschedules.php" class="btn btn-sq-lg btn-primary">
+                    <i class="fa fa-user fa-5x"></i><br/>
+                    Manage Chef's Schedule's
                 </a>
             </div>
 			

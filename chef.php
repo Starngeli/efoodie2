@@ -4,7 +4,7 @@
 	require_once 'phpscripts/connection.php';
 
 	include "templates/header.php";
-	include "templates/nav.php";
+	include "templates/testnav.php";
 ?>
 
     <main role="main">
@@ -41,11 +41,11 @@
                 </a>
             </div>
 			<div class="col-md-3">
-                <a href="view_message.php" class="btn btn-sq-lg btn-primary">
+                <a href="managerecipes.php" class="btn btn-sq-lg btn-primary">
                     <i class="fa fa-user fa-5x"></i><br/>
-                    Edit Food Recipe Blogs
+                    Manage Food Recipe
                 </a>
-            </div>
+            </div>	
      
 	</div>
       </div> <!-- /container -->
